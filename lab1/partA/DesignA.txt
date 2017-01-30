@@ -1,0 +1,86 @@
+/* Brian Huynh 57641580
+ *
+ * Global Variables
+ * int num_threads = specified by command line argument;
+ * int total_courses = num_threads * 3;
+ * int num_courses = 0;
+ * pthread_mutex_t * mutexes = malloc(sizeof(pthread_mutex_t) * num_threads);
+ * phil_data philosophers[num_threads];
+ *
+ * Initialize Philosophers and Mutexes
+ * for (int i = 0; i < num_threads; i++) {
+ *      philosophers[i].phil_num = i;
+ *      philosophers[i].course = 0;
+ *      philosophers[i].forks = none;
+ *      pthread_mutex_init(&mutexes[i], NULL);
+ * }
+ *
+ *
+ * Subroutine called by pthread_create()
+ * void * eat_meal(void * args) {
+ *      // args points to an array of philosopher structs.
+ *      phil_data * phil = (phil_data *) args; // Type cast to philosopher data type.
+ *      int i = phil->phil_num;
+ *      if (!pthread_mutex_trylock(&mutexes[i]) && phil->course < 3) {
+ *          // If the lock returns 0 indicating success and if
+ *          // the current philosopher is not yet full, acquire the first fork.
+ *          phil->forks = one;
+ *
+ *          if (i == num_threads - 1) {
+ *              // If the philosopher is at the last index of the array,
+ *              // wrap around and look at index 0 for the 2nd fork.
+ *              switch(pthread_mutex_trylock(&mutexes[0])) {
+ *                  case 0: // Successfully acquired the 2nd lock.
+ *                      phil->forks = two;
+ *                      phil->course += 1;
+ *                      sleep(1);
+ *                      phtread_mutex_unlock(&mutexes[0]); // Unlock the 2nd lock.
+ *                      break;
+ *                  case EBUSY: // Error code macro indicating the lock is already locked.
+ *                      pthread_mutex_unlock(&mutexes[i]); // Unlock the 1st lock.
+ *                      return NULL;
+ *                  default:
+ *                      printf("other error occurred\n");
+ *              }
+ *          }
+ *          else {
+ *              switch(pthread_mutex_trylock(&mutexes[i+1])) {
+ *                  // If the fork on the philosopher's right-hand side is free,
+ *                  // lock the mutex at i+1 indicating acquiring the 2nd fork.
+ *                  case 0:
+ *                      phil->forks = two;
+ *                      phil->course += 1;
+ *                      sleep(1);
+ *                      pthread_mutex_unlock(&mutexes[i+1]);
+ *                      break;
+ *                  case EBUSY:
+ *                      pthread_mutex_unlock(&mutexes[i]);
+ *                      return NULL;
+ *                  default:
+ *                      printf("other error occurred\n");
+ *              }
+ *          }
+ *          if (phil->course == 3)
+ *              num_courses += 3; // Increment the total number of courses eaten so far.
+ *          phil->forks = none;
+ *          pthread_mutex_unlock(&mutexes[i]); // Unlock the 1st lock.
+ *      }
+ *      else
+ *          pthread_mutex_unlock(&mutexes[i]); 
+ * 
+ *      return NULL;
+ * }
+ *
+ * Called in the main function.
+ * while (num_courses < total_courses) {
+ *      pthread_create(&threads[i], NULL, &eat_meal, &philosophers[i]);
+ * }
+ *
+ * Cleanup
+ * for (int i = 0; i < num_philosophers; i++) {
+ *      pthread_join(threads[i], NULL);
+ *      pthread_mutex_destroy(&mutexes[i]); 
+ * }
+ * free(mutexes);
+ *
+ */
