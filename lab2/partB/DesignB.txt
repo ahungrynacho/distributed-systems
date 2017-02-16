@@ -1,0 +1,65 @@
+Brian Huynh 57641580
+const static int ARRAY_SIZE = 130000;
+using Lines = char[ARRAY_SIZE][16];
+
+struct letter_only: std::ctype<char> {
+    // removes all punctuations
+};
+
+int main(int argc, char * argv[]) {
+    int processId, num_processes, word_count;
+    int * to_return = NULL;
+    double start_time, end_time;
+    Lines lines; // Stores each word as an element in the array.
+
+    // Setup MPI
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &processId);
+    MPI_Comm_size(MPI_COMM_WORLD, &num_processes);
+
+    if (processId == 0) {
+        // Read lines input text file and store each word as an element in the lines array.
+        // Record the number of words found in word_count.
+    }
+
+    start_time = MPI_Wtime();
+    int chunkSize = floor((double) word_count/num_processes);
+    char ** recv_buf = new char[chunkSize][16];
+    MPI_Scatter(lines, chunkSize, MPI_CHAR, recv_buf, chunkSize, MPI_CHAR, 0, MPI_COMM_WORLD);
+    int local_count = 0;
+
+    // Count number of matches with the search word in the current process's 
+    // slice of the lines array.
+    for (int i = 0; i < chunkSize; ++i) {
+        if (recv_buf[i] == word)
+            local_count++;
+    }
+
+    if (argv[3] == "b1") {
+        int global_count;
+        // Sum up the partial word counts from each process into global_count.
+        MPI_Reduce(&local_count, &global_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);        
+    }
+    else {
+        int global_count;
+        if (processId != 0) {
+            // If not the root process, wait to receive global_count from the previous process denoted by processId-1.
+            MPI_Recv(&global_count, 1, MPI_INT, processId-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        }
+        // Every process adds their local_count to global_count
+        // and sends the updated global_count to the next process.
+        // (processId+1) % num_processes ensures that processId 3 sends its global_sum to processId 0.
+        // Message passing stops when processId reaches 0.
+        
+        global_count += local_count;
+        if (processId == 0)
+            MPI_Recv(&global_count, 1, MPI_INT, num_processes-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    
+    }
+
+    if (processId == 0) {
+        end_time = MPI_Wtime();
+        std::cout << "Time: " << ((double)end_time - start_time) << std::endl;
+    }
+    MPI_Finalize();
+}

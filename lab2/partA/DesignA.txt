@@ -1,0 +1,45 @@
+Brian Huynh 57641580
+// Sobel algorithm that processes given chunks from a linearized 2D array denoted by inputImage.
+int * processImage(int * inputImage, processId, int num_processes, int image_height, int image_width) {
+    // from given template
+}
+
+int main(int argc, char * argv[]) {
+    int processId, num_processes, image_height, image_width, image_maxShades;
+    int *inputImage, *outputImage; // Pointers to arrays.
+    
+    // Setup MPI
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &processId);
+    MPI_Comm_size(MPI_COMM_WORLD, &num_processes);
+    
+    // Each element in inputImage is populated with pixels read from stdin using the same template from lab1 partB.
+    // image_height, image_width, and image_maxShades are assigned values once the image is read from stdin.
+
+    inputImage = new int[image_height * image_width];
+
+    if (processId == 0)
+        outputImage = new int[image_height * image_width];
+
+    // Calling MPI Functions
+    int chunkSize = floor((double) image_height/num_processes);
+    int * recv_buf = new int[chunkSize];
+
+    // Send pieces of inputImage to each process to be computed.
+    MPI_Scatter(inputImage, chunkSize, MPI_INT, recv_buf, chunkSize, MPI_INT, 0, MPI_COMM_WORLD);
+
+    // Process a portion of inputImage from recv_buf.
+    int * subimage = processImage(recv_buf, processId, num_processes, image_height, image_width);
+
+    // Have the root process combine all subimages computed by num_processes into outputImage.
+    MPI_Gather(subimage, chunkSize, MPI_INT, outputImage, chunkSize, MPI_INT, 0, MPI_COMM_WORLD);
+    
+    if (processId == 0) {
+        // Iterate over outputImage and output the result into output.pgm image file.
+    }
+
+    // Terminate the MPI environment.
+    MPI_Finalize();
+    return 0;
+    
+} 
