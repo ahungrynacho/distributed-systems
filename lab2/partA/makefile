@@ -11,6 +11,10 @@ all: $(SRC0)
 
 run: $(PROGRAM)
 	mpirun -np 4 ./$(PROGRAM) aniketsh_tc1.pgm output_tc1.pgm
+	mpirun -np 4 ./$(PROGRAM) aniketsh_tc2.pgm output_tc2.pgm
+	mpirun -np 4 ./$(PROGRAM) aniketsh_tc3.pgm output_tc3.pgm
+	mpirun -np 4 ./$(PROGRAM) aniketsh_tc4.pgm output_tc4.pgm
+	mpirun -np 4 ./$(PROGRAM) aniketsh_tc5.pgm output_tc5.pgm
 
 run-mpi: $(PROGRAM)
 	mpirun -np 4 ./$(PROGRAM) aniketsh_tc1.pgm output_tc1.pgm

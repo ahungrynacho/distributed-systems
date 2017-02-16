@@ -59,6 +59,7 @@ int* processImage(int* inputImage, int processId, int num_processes, int image_h
 	return partialOutputImage;
 }
 
+// dummy test function
 int * paint(int * subimage, int image_height, int image_width) {
     int length = image_height * image_width;
     int * output = new int[length];
@@ -180,22 +181,20 @@ int main(int argc, char* argv[])
     std::cout << num_processes << std::endl;
     std::cout << chunkSize << std::endl;
     */
-chunkSize = floor((double) (image_height * image_width) / num_processes);
-subheight = floor((double) (image_height / sqrt(num_processes)));
-    subwidth = floor((double) (image_width / sqrt(num_processes)));
+    chunkSize = floor((double) (image_height * image_width) / num_processes);
+    subheight = floor((double) (image_height / num_processes));
     remainder = (image_height * image_width) - (chunkSize * num_processes);
 
     int * recv_buf = new int[chunkSize];
     MPI_Scatter(inputImage, chunkSize, MPI_INT, recv_buf, chunkSize, MPI_INT, 0, MPI_COMM_WORLD);
 
-    //int * subimage = processImage(recv_buf, processId, num_processes, 1, chunkSize); // error found here
-    int * subimage = paint(recv_buf, 1, chunkSize);
+    int * subimage = processImage(recv_buf, processId, num_processes, subheight, image_width); // error found here
+    //int * subimage = paint(recv_buf, 1, chunkSize);
 
     if (processId == 0) {
         std::cout << "chunkSize: " << chunkSize << std::endl;
         std::cout << "subheight: " << subheight << std::endl;
-        std::cout << "subwidth: " << subwidth << std::endl;
-
+        std::cout << "image_width: " << image_width << std::endl;
         outputImage = new int[chunkSize * num_processes];
     }
     MPI_Gather(subimage, chunkSize, MPI_INT, outputImage, chunkSize, MPI_INT, 0, MPI_COMM_WORLD);
