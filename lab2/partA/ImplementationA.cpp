@@ -27,7 +27,7 @@ int* processImage(int* inputImage, int processId, int num_processes, int image_h
 	//chunkSize is the number of rows to be computed by this process
     //int height_start = processId * chunkSize;
     //int height_end = height_start + chunkSize;
-    int* partialOutputImage = new int[image_height * image_width];
+    int image_buf[image_height * image_width];
 	
 	for( x = 0; x < image_height; x++ ){
 		 for( y = 0; y < image_width; y++ ){
@@ -53,9 +53,13 @@ int* processImage(int* inputImage, int processId, int num_processes, int image_h
 
 				 sum = (abs(sumx) + abs(sumy));
 			 }
-			 partialOutputImage[x*image_width + y] = sum;
+			 image_buf[x*image_width + y] = sum;
 		 }
 	}
+    int * partialOutputImage = new int[(image_height-2) * image_width];
+    for (int i = image_width; i < (image_width * (image_height-1)); ++i) {
+        partialOutputImage[i - image_width] = image_buf[i];
+    }
 	return partialOutputImage;
 }
 
@@ -68,6 +72,12 @@ int * paint(int * subimage, int image_height, int image_width) {
         output[i] = 100;
     }
     return output;
+}
+
+void fill_row(int * buf, int length) {
+    for (int i = 0; i < length; ++i) {
+        buf[i] = 0;
+    }
 }
 
 int main(int argc, char* argv[])
@@ -185,10 +195,54 @@ int main(int argc, char* argv[])
     subheight = floor((double) (image_height / num_processes));
     remainder = (image_height * image_width) - (chunkSize * num_processes);
 
-    int * recv_buf = new int[chunkSize];
+    int recv_buf[chunkSize];
     MPI_Scatter(inputImage, chunkSize, MPI_INT, recv_buf, chunkSize, MPI_INT, 0, MPI_COMM_WORLD);
+   
 
-    int * subimage = processImage(recv_buf, processId, num_processes, subheight, image_width); // error found here
+    int last_row = (image_width * (subheight-1)); // start index of last row of recv_buf
+    int bottom_send_buf[image_width];
+    int bottom_recv_buf[image_width];
+    int top_send_buf[image_width];
+    int top_recv_buf[image_width];
+    for (int i = last_row; i < chunkSize; ++i) {
+        bottom_send_buf[i - last_row] = recv_buf[i];
+    }
+    for (int i = 0; i < image_width; ++i) {
+        top_send_buf[i] = recv_buf[i];
+    }
+
+    if (processId == 0) {
+        //fill_row(top_recv_buf, image_width); // Zero the first row of the whole image.
+        MPI_Send(bottom_send_buf, image_width, MPI_INT, 1, 0, MPI_COMM_WORLD);
+        MPI_Recv(bottom_recv_buf, image_width, MPI_INT, 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    }
+    else if (processId == num_processes-1) {
+        //fill_row(bottom_recv_buf, image_width); // Zero the last row of the whole image.
+        MPI_Send(top_send_buf, image_width, MPI_INT, num_processes-2, 0, MPI_COMM_WORLD);
+        MPI_Recv(top_recv_buf, image_width, MPI_INT, num_processes-2, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    }
+    else {
+        MPI_Send(top_send_buf, image_width, MPI_INT, processId-1, 0, MPI_COMM_WORLD);
+        MPI_Send(bottom_send_buf, image_width, MPI_INT, processId+1, 0, MPI_COMM_WORLD);
+        MPI_Recv(top_recv_buf, image_width, MPI_INT, processId-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Recv(bottom_recv_buf, image_width, MPI_INT, processId+1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    }
+
+
+   
+    int full_buf_len = chunkSize + (image_width * 2);
+    int full_buf[full_buf_len];
+    for (int i = 0; i < full_buf_len; ++i) {
+        if (i < image_width)
+            full_buf[i] = top_recv_buf[i];
+        else if (i >= image_width && i < last_row)
+            full_buf[i] = recv_buf[i - image_width];
+        else
+            full_buf[i] = bottom_recv_buf[i - last_row];
+
+    } 
+
+    int * subimage = processImage(full_buf, processId, num_processes, subheight+2, image_width); // error found here
     //int * subimage = paint(recv_buf, 1, chunkSize);
 
     if (processId == 0) {

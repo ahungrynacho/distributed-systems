@@ -11,7 +11,7 @@
 #include <cmath>
 // Process information in order.
 const static int ARRAY_SIZE = 130000;
-using Lines = char[ARRAY_SIZE][16];
+using Lines = char[ARRAY_SIZE][16]; // Lines is already linearized under-the-hood in memory
 
 // To remove punctuations
 struct letter_only: std::ctype<char> 
@@ -34,24 +34,20 @@ void DoOutput(std::string word, int result)
 }
 
 // ***************** Add your functions here *********************
-// How do scoping rules work in MPI?
-/*int scatter(char ** lines, int chunkSize, std::string word) {
-    int local_count = 0;
-    char * recv_buf = new char[chunkSize][16];
-    
-    MPI_Scatter(lines, chunkSize, MPI_CHAR, recv_buf, chunkSize, MPI_CHAR, 0, MPI_COMM_WORLD);
-    for (int i = 0; i < chunkSize; ++i) {
-        if (recv_buf[i] == word)
-            local_count++;
+/*
+std::string output_words(char * buf[16], int length) {
+    std::string result = "";
+    for (int i = 0; i < length; ++i) {
+        result += buf[i] + ' ';
     }
-    return local_count;
+    return result;
 }
 */
-
 int main(int argc, char* argv[])
 {
     int processId;
     int num_processes;
+    int total_words;
     int chunkSize;
     int *to_return = NULL;
     double start_time, end_time;
@@ -85,9 +81,16 @@ int main(int argc, char* argv[])
 		while(file >> workString){
 			memset(lines[i], '\0', 16);
 			memcpy(lines[i++], workString.c_str(), workString.length());
-            //std::cout << lines[i-1] << std::endl;
 		}
-        chunkSize = floor((double) i / (double) num_processes);
+        total_words = i;
+        chunkSize = floor((double) total_words /  num_processes);
+
+        for (int i = 1; i < num_processes; ++i) {
+            MPI_Send(&chunkSize, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
+        }   
+    }
+    else {
+        MPI_Recv(&chunkSize, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     }
 	
 	//***************** Add code as per your requirement below ***************** 
@@ -100,29 +103,43 @@ int main(int argc, char* argv[])
     std::cout << "chunkSize: " << chunkSize << std::endl;
     std::cout << "--------------------" << std::endl;
     */
-    char recv_buf[chunkSize][16];
-    MPI_Scatter(lines, chunkSize, MPI_CHAR, recv_buf, chunkSize, MPI_CHAR, 0, MPI_COMM_WORLD);
+    char recv_buf[chunkSize * 16];
+    // initialize array
+    for (int i = 0; i < chunkSize * 16; ++i) {
+        recv_buf[i] = '\0';
+    }
+    MPI_Scatter(lines, chunkSize * 16, MPI_CHAR, recv_buf, chunkSize * 16, MPI_CHAR, 0, MPI_COMM_WORLD);
+    std::vector<std::string> recv_buf_str;
+
+    
+    // Convert char* to std::string.
+    for (int i = 0; i < chunkSize; ++i) {
+        std::string temp = "";
+        for (int j = 0; j < 16; ++j) {
+            if (recv_buf[(i * 16) + j] == '\0')
+                break;
+            temp += recv_buf[(i * 16) + j];
+        }
+        recv_buf_str.push_back(temp);
+    }
     
     int local_count = 0;
-    for (int i = 0; i < chunkSize; ++i) {
-        if (recv_buf[i] == word)
+    for (std::string w : recv_buf_str) {
+        if (w.compare(word) == 0)
             local_count++;
     }
-    std::cout << "processId: " << processId << " -- " << "local_count: " << local_count << " -- " << "chunkSize: " << chunkSize << std::endl;
 
 
+
+    int global_count = 0;
 	if( version == "b1")
 	{
 		// Reduction for Part B1
-        int global_count; 
         MPI_Reduce(&local_count, &global_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
-        //std::cout << "num_processes: " << num_processes << std::endl;
 
 	} else {
 		// Point-To-Point communication for Part B2
 
-
-        int global_count;
         if (processId != 0) {
             MPI_Recv(&global_count, 1, MPI_INT, processId-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
@@ -131,13 +148,19 @@ int main(int argc, char* argv[])
         if (processId == 0) {
             MPI_Recv(&global_count, 1, MPI_INT, num_processes-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
-
 	}
 	
     if(processId == 0)
     {
         // Output the search word's frequency here
 		end_time=MPI_Wtime();
+        if (version == "b1")
+            std::cout << "Reduction" << std::endl;
+        else
+            std::cout << "Point-to-Point" << std::endl;
+
+        std::cout << "Number of Processes: " << num_processes << std::endl;
+        DoOutput(word, global_count);
         std::cout << "Time: " << ((double)end_time-start_time) << std::endl;
     }
  
