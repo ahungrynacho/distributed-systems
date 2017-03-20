@@ -1,0 +1,36 @@
+void detect_edges(int height_start, int height_end, int input[MAX_PIXELS][MAX_PIXELS], int output[MAX_PIXELS][MAX_PIXELS]) {
+
+    int maskX[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int maskY[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
+    for (int x = height_start; x < height_end; ++x) {
+        for (int y = 0; y < image_width; ++y) {
+            int sumX = 0;
+            int sumY = 0;
+            int sum = 0;
+
+            /* For handling image boundaries. */
+            if (x == 0 || x == (image_height - 1) || y == 0 || y == (image_width - 1))
+                sum = 0;
+            else {
+                /* Gradient calculation in X Dimension. */
+                for (int i = -1; i <= 1; i++) {
+                    for (int j = -1; j<= 1; j++) {
+                        sumX += input[x+i][y+j] * maskX[i+1][j+1];
+                    }
+                }
+                /* Gradient calculation in Y Dimension. */
+                for (int i = -1; i <= 1; i++) {
+                    for (int j = -1; j <= 1; j++) {
+                        sumY += input[x+i][y+j] * maskY[i+1][j+1];
+                    }
+                }
+                sum = abs(sumX) + abs(sumY);
+                if (sum >= 255)
+                    sum = 255;
+                else if (sum <= 0)
+                    sum = 0;
+            }
+            output[x][y] = sum;
+        }
+    }
+}

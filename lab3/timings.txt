@@ -1,0 +1,1110 @@
+./Implementation.o aniketsh_tc1.pgm output_tc1_a1.pgm 25 a1
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.009837
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             250            
+0               250             275            
+1               275             300            
+0               300             325            
+1               325             350            
+0               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a1.pgm 25 a1
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.030324
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             250            
+0               250             275            
+1               275             300            
+0               300             325            
+1               325             350            
+0               350             375            
+1               375             400            
+0               400             425            
+1               425             450            
+0               450             475            
+1               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a1.pgm 25 a1
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.030572
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             250            
+0               250             275            
+1               275             300            
+0               300             325            
+1               325             350            
+0               350             375            
+1               375             400            
+0               400             425            
+1               425             450            
+0               450             475            
+1               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a1.pgm 25 a1
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.020926
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             250            
+0               250             275            
+1               275             300            
+0               300             325            
+1               325             350            
+0               350             375            
+1               375             400            
+0               400             425            
+1               425             450            
+0               450             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a1.pgm 25 a1
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.008433
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a2.pgm 25 a2
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.009769
+thread_id       start_index     end_index      
+1               0               25             
+0               25              50             
+1               50              75             
+0               75              100            
+1               100             125            
+0               125             150            
+1               150             175            
+0               175             200            
+1               200             225            
+0               225             250            
+1               250             275            
+0               275             300            
+1               300             325            
+0               325             350            
+1               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a2.pgm 25 a2
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.029309
+thread_id       start_index     end_index      
+1               0               25             
+0               25              50             
+1               50              75             
+0               75              100            
+1               100             125            
+0               125             150            
+1               150             175            
+0               175             200            
+1               200             225            
+0               225             250            
+1               250             275            
+0               275             300            
+1               300             325            
+0               325             350            
+1               350             375            
+0               375             400            
+1               400             425            
+0               425             450            
+1               450             475            
+0               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a2.pgm 25 a2
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.029211
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             250            
+0               250             275            
+1               275             300            
+0               300             325            
+1               325             350            
+0               350             375            
+1               375             400            
+0               400             425            
+1               425             450            
+0               450             475            
+1               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a2.pgm 25 a2
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.021923
+thread_id       start_index     end_index      
+1               0               25             
+0               25              50             
+1               50              75             
+0               75              100            
+1               100             125            
+0               125             150            
+1               150             175            
+0               175             200            
+1               200             225            
+0               225             250            
+1               250             275            
+0               275             300            
+1               300             325            
+0               325             350            
+0               350             375            
+1               375             400            
+0               400             425            
+1               425             450            
+0               450             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a2.pgm 25 a2
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.008477
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+0               50              75             
+1               75              100            
+0               100             125            
+1               125             150            
+0               150             175            
+1               175             200            
+0               200             225            
+1               225             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a1.pgm 25 a1
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.005938
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+0               100             125            
+1               125             150            
+2               150             175            
+3               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+0               300             325            
+1               325             350            
+2               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a1.pgm 25 a1
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.016288
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+0               100             125            
+1               125             150            
+2               150             175            
+3               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+0               300             325            
+1               325             350            
+2               350             375            
+3               375             400            
+0               400             425            
+1               425             450            
+2               450             475            
+3               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a1.pgm 25 a1
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.015974
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+0               100             125            
+1               125             150            
+2               150             175            
+3               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+0               300             325            
+1               325             350            
+2               350             375            
+3               375             400            
+0               400             425            
+1               425             450            
+2               450             475            
+3               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a1.pgm 25 a1
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.011943
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+0               100             125            
+1               125             150            
+2               150             175            
+3               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+0               300             325            
+1               325             350            
+2               350             375            
+3               375             400            
+0               400             425            
+1               425             450            
+2               450             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a1.pgm 25 a1
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.005626
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+0               100             125            
+1               125             150            
+2               150             175            
+3               175             200            
+0               200             225            
+1               225             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a2.pgm 25 a2
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.005801
+thread_id       start_index     end_index      
+1               0               25             
+2               25              50             
+0               50              75             
+3               75              100            
+0               100             125            
+2               125             150            
+1               150             175            
+0               175             200            
+3               200             225            
+2               225             250            
+1               250             275            
+0               275             300            
+3               300             325            
+2               325             350            
+1               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a2.pgm 25 a2
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.015807
+thread_id       start_index     end_index      
+3               0               25             
+1               25              50             
+0               50              75             
+2               75              100            
+1               100             125            
+3               125             150            
+0               150             175            
+2               175             200            
+1               200             225            
+3               225             250            
+0               250             275            
+2               275             300            
+1               300             325            
+0               325             350            
+3               350             375            
+2               375             400            
+1               400             425            
+0               425             450            
+3               450             475            
+2               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a2.pgm 25 a2
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.016005
+thread_id       start_index     end_index      
+1               0               25             
+0               25              50             
+3               50              75             
+2               75              100            
+0               100             125            
+2               125             150            
+1               150             175            
+3               175             200            
+0               200             225            
+2               225             250            
+1               250             275            
+3               275             300            
+2               300             325            
+0               325             350            
+1               350             375            
+3               375             400            
+2               400             425            
+0               425             450            
+1               450             475            
+3               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a2.pgm 25 a2
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.012178
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+1               100             125            
+3               125             150            
+0               150             175            
+2               175             200            
+1               200             225            
+3               225             250            
+0               250             275            
+2               275             300            
+1               300             325            
+3               325             350            
+0               350             375            
+2               375             400            
+1               400             425            
+3               425             450            
+0               450             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a2.pgm 25 a2
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.004928
+thread_id       start_index     end_index      
+2               0               25             
+0               25              50             
+3               50              75             
+1               75              100            
+3               100             125            
+0               125             150            
+2               150             175            
+1               175             200            
+3               200             225            
+0               225             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a1.pgm 25 a1
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.005244
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+4               100             125            
+5               125             150            
+6               150             175            
+7               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+4               300             325            
+5               325             350            
+6               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a1.pgm 25 a1
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.011867
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+4               100             125            
+5               125             150            
+6               150             175            
+7               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+4               300             325            
+5               325             350            
+6               350             375            
+7               375             400            
+0               400             425            
+1               425             450            
+2               450             475            
+3               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a1.pgm 25 a1
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.015212
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+4               100             125            
+5               125             150            
+6               150             175            
+7               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+4               300             325            
+5               325             350            
+6               350             375            
+7               375             400            
+0               400             425            
+1               425             450            
+2               450             475            
+3               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a1.pgm 25 a1
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.009970
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+4               100             125            
+5               125             150            
+6               150             175            
+7               175             200            
+0               200             225            
+1               225             250            
+2               250             275            
+3               275             300            
+4               300             325            
+5               325             350            
+6               350             375            
+7               375             400            
+0               400             425            
+1               425             450            
+2               450             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a1.pgm 25 a1
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 STATIC TIME: 0.004878
+thread_id       start_index     end_index      
+0               0               25             
+1               25              50             
+2               50              75             
+3               75              100            
+4               100             125            
+5               125             150            
+6               150             175            
+7               175             200            
+0               200             225            
+1               225             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a2.pgm 25 a2
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.007265
+thread_id       start_index     end_index      
+0               0               25             
+5               25              50             
+4               50              75             
+1               75              100            
+3               100             125            
+7               125             150            
+2               150             175            
+6               175             200            
+1               200             225            
+5               225             250            
+3               250             275            
+4               275             300            
+0               300             325            
+7               325             350            
+2               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a2.pgm 25 a2
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.013265
+thread_id       start_index     end_index      
+0               0               25             
+4               25              50             
+5               50              75             
+3               75              100            
+6               100             125            
+7               125             150            
+1               150             175            
+0               175             200            
+7               200             225            
+6               225             250            
+5               250             275            
+1               275             300            
+3               300             325            
+4               325             350            
+0               350             375            
+7               375             400            
+6               400             425            
+1               425             450            
+5               450             475            
+3               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a2.pgm 25 a2
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.013352
+thread_id       start_index     end_index      
+0               0               25             
+5               25              50             
+6               50              75             
+7               75              100            
+4               100             125            
+2               125             150            
+1               150             175            
+3               175             200            
+7               200             225            
+5               225             250            
+1               250             275            
+2               275             300            
+0               300             325            
+6               325             350            
+4               350             375            
+3               375             400            
+7               400             425            
+1               425             450            
+5               450             475            
+2               475             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a2.pgm 25 a2
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.009973
+thread_id       start_index     end_index      
+0               0               25             
+6               25              50             
+5               50              75             
+4               75              100            
+3               100             125            
+7               125             150            
+1               150             175            
+7               175             200            
+3               200             225            
+0               225             250            
+6               250             275            
+5               275             300            
+4               300             325            
+1               325             350            
+7               350             375            
+3               375             400            
+0               400             425            
+6               425             450            
+5               450             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a2.pgm 25 a2
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 25
+LAB3 DYNAMIC TIME: 0.004335
+thread_id       start_index     end_index      
+0               0               25             
+3               25              50             
+1               50              75             
+4               75              100            
+5               100             125            
+6               125             150            
+7               150             175            
+2               175             200            
+5               200             225            
+0               225             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a1.pgm 70 a1
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.010242
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a1.pgm 70 a1
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.031964
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             420            
+0               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a1.pgm 70 a1
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.032089
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             420            
+0               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a1.pgm 70 a1
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.022066
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             420            
+0               420             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a1.pgm 70 a1
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.008405
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a2.pgm 70 a2
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.010092
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a2.pgm 70 a2
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.030847
+thread_id       start_index     end_index      
+1               0               70             
+0               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             420            
+0               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a2.pgm 70 a2
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.031355
+thread_id       start_index     end_index      
+1               0               70             
+0               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             420            
+0               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a2.pgm 70 a2
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.022158
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+0               140             210            
+1               210             280            
+0               280             350            
+1               350             420            
+1               420             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a2.pgm 70 a2
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 2 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.008393
+thread_id       start_index     end_index      
+1               0               70             
+0               70              140            
+1               140             210            
+0               210             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a1.pgm 70 a1
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.007630
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+0               280             350            
+1               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a1.pgm 70 a1
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.017745
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+0               280             350            
+1               350             420            
+2               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a1.pgm 70 a1
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.017589
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+0               280             350            
+1               350             420            
+2               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a1.pgm 70 a1
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.013510
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+0               280             350            
+1               350             420            
+2               420             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a1.pgm 70 a1
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.005336
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a2.pgm 70 a2
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.006472
+thread_id       start_index     end_index      
+0               0               70             
+2               70              140            
+1               140             210            
+3               210             280            
+1               280             350            
+3               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a2.pgm 70 a2
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.017533
+thread_id       start_index     end_index      
+1               0               70             
+0               70              140            
+2               140             210            
+3               210             280            
+0               280             350            
+1               350             420            
+2               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a2.pgm 70 a2
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.017356
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+3               140             210            
+2               210             280            
+0               280             350            
+1               350             420            
+3               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a2.pgm 70 a2
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.013390
+thread_id       start_index     end_index      
+1               0               70             
+0               70              140            
+2               140             210            
+3               210             280            
+1               280             350            
+3               350             420            
+2               420             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a2.pgm 70 a2
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 4 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.005396
+thread_id       start_index     end_index      
+1               0               70             
+3               70              140            
+0               140             210            
+2               210             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a1.pgm 70 a1
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.006853
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+4               280             350            
+5               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a1.pgm 70 a1
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.011108
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+4               280             350            
+5               350             420            
+6               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a1.pgm 70 a1
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.010868
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+4               280             350            
+5               350             420            
+6               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a1.pgm 70 a1
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.009851
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             280            
+4               280             350            
+5               350             420            
+6               420             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a1.pgm 70 a1
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 STATIC TIME: 0.007423
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+2               140             210            
+3               210             246            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc1.pgm output_tc1_a2.pgm 70 a2
+Detect edges in aniketsh_tc1.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.005354
+thread_id       start_index     end_index      
+0               0               70             
+1               70              140            
+5               140             210            
+6               210             280            
+7               280             350            
+2               350             360            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc2.pgm output_tc2_a2.pgm 70 a2
+Detect edges in aniketsh_tc2.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.012235
+thread_id       start_index     end_index      
+0               0               70             
+6               70              140            
+5               140             210            
+3               210             280            
+7               280             350            
+2               350             420            
+4               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc3.pgm output_tc3_a2.pgm 70 a2
+Detect edges in aniketsh_tc3.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.012457
+thread_id       start_index     end_index      
+5               0               70             
+7               70              140            
+4               140             210            
+6               210             280            
+3               280             350            
+0               350             420            
+2               420             480            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc4.pgm output_tc4_a2.pgm 70 a2
+Detect edges in aniketsh_tc4.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.008492
+thread_id       start_index     end_index      
+4               0               70             
+7               70              140            
+0               140             210            
+1               210             280            
+3               280             350            
+6               350             420            
+5               420             460            
+---------------------------------------------------------------
+./Implementation.o aniketsh_tc5.pgm output_tc5_a2.pgm 70 a2
+Detect edges in aniketsh_tc5.pgm using OpenMP threads
+
+THREADS: 8 CHUNKSIZE: 70
+LAB3 DYNAMIC TIME: 0.007042
+thread_id       start_index     end_index      
+5               0               70             
+0               70              140            
+6               140             210            
+4               210             246            
+---------------------------------------------------------------
